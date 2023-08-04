@@ -1,0 +1,11 @@
+// C-Groups file for C-Gate
+// syntax is:
+// <name> <cgroup-type> <options> <included entities>
+//
+// sample cgroup c1
+// uncomment the next line to make active
+//c1 command - 1.1 1.2
+//
+// sample cgroup c2
+// uncomment the next line to make active
+//c2 command - 1.3 1.4

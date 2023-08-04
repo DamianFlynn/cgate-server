@@ -1,0 +1,958 @@
+##C-Gate Server Global Configuration File
+## This file was written automatically by a command issued to the server
+## Created:Mon Oct 31 09:57:30 AWST 2022
+## File name: C:\Program Files (x86)\Clipsal\C-Gate2\config\C-GateConfig.txt
+## Note, backslash characters in property values must be shown as '\\'
+
+#### accept-connections-from:
+# Space separated list of IP addresses or hostnames from which to accept command connections
+# Default Value: all
+# Scope:         global
+# Effective on:  restart
+###
+accept-connections-from=all
+
+#### access-control-file:
+# Name of this access control file relative to the config directory
+# Default Value: access.txt
+# Scope:         global
+# Effective on:  restart
+###
+access-control-file=access.txt
+
+#### allow-fast-start:
+# Allow networks to use database for fast startup
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+allow-fast-start=no
+
+#### allow-recall-write:
+# Enable the recall from command sessions
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+allow-recall-write=yes
+
+#### allow-v3-pci:
+# Allow network to use version 3 or later PCI advanced features
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+allow-v3-pci=yes
+
+#### application.catalog.directory:
+# directory where application catalog is stored
+# Default Value: unitspec
+# Scope:         global
+# Effective on:  restart
+###
+application.catalog.directory=unitspec
+
+#### application.catalog.filename:
+# application catalog filename
+# Default Value: applications.xml
+# Scope:         global
+# Effective on:  restart
+###
+application.catalog.filename=applications.xml
+
+#### application.model-change-events:
+# show events indicating model updates from sync processes
+# Default Value: yes
+# Scope:         project
+# Effective on:  immediate
+###
+application.model-change-events=yes
+
+#### application.show-command-failure:
+# Show SAL command failures in SCP and event port
+# Default Value: yes
+# Scope:         project
+# Effective on:  immediate
+###
+application.show-command-failure=yes
+
+#### auto-reopen:
+# Automatically attempt to re-open networks that have been closed due to failures.
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+auto-reopen=yes
+
+#### cbus-application:
+# The default application number for this network. This should be left set to 56
+# Default Value: 56
+# Scope:         network
+# Effective on:  closeopen
+###
+cbus-application=56
+
+#### cbus-tx-delay:
+# Time in milliseconds between commands sent to the network if there is no other mechanism in use (flow control, pci-sync)
+# Default Value: 250
+# Scope:         network
+# Effective on:  closeopen
+###
+cbus-tx-delay=250
+
+#### cbus.tx-cache:
+# Cache outgoing identical commands
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+cbus.tx-cache=yes
+
+#### cbus.tx-compress:
+# Perform header compression on outgoing commands
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+cbus.tx-compress=yes
+
+#### ccp.display-oids:
+# Display OIDs in the config change port (CCP)
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+ccp.display-oids=yes
+
+#### ccp.display-state:
+# Display object state changes in the config change port (CCP)
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+ccp.display-state=yes
+
+#### cgate-name:
+# Name of this server
+# Default Value: Clipsal C-Gate
+# Scope:         global
+# Effective on:  restart
+###
+cgate-name=Clipsal C-Gate
+
+#### cgroups-file:
+# Name of the C-Groups file in the config directory
+# Default Value: cgroups.txt
+# Scope:         project
+# Effective on:  closeopen
+###
+cgroups-file=cgroups.txt
+
+#### clock.master:
+# Operate the clock application in master mode
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+clock.master=no
+
+#### clock.mastermode:
+# Selects primary or secondard master mode
+# Default Value: secondary
+# Scope:         network
+# Effective on:  closeopen
+###
+clock.mastermode=secondary
+
+#### clock.update-interval:
+# Interval in minutes between clock and timekeeping messages
+# Default Value: 30
+# Scope:         network
+# Effective on:  closeopen
+###
+clock.update-interval=30
+
+#### command-local-address:
+# If set, gives the IP address that the command interface server will be started on
+# Default Value: 
+# Scope:         global
+# Effective on:  restart
+###
+command-local-address=
+
+#### command-port:
+# TCP port number for the command interface
+# Default Value: 20023
+# Scope:         global
+# Effective on:  restart
+###
+command-port=20023
+
+#### command.encoding:
+# character encoding used for command, event, SCP and CCP ports
+# Default Value: utf-8
+# Scope:         global
+# Effective on:  restart
+###
+command.encoding=utf-8
+
+#### command.show-responses:
+# produce an event for each response to a command
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+command.show-responses=yes
+
+#### command.show-time:
+# show execution time events for commands
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+command.show-time=no
+
+#### comms-debug:
+# Enable write of comms debug log
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+comms-debug=no
+
+#### config-change-port:
+# Port number to use for the config change port
+# Default Value: 20026
+# Scope:         global
+# Effective on:  restart
+###
+config-change-port=20026
+
+#### config-path:
+# Path to directory where configuration files are held
+# Default Value: config
+# Scope:         global
+# Effective on:  restart
+###
+config-path=config
+
+#### console.enable-commands:
+# allow command input on the console
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+console.enable-commands=yes
+
+#### default-tag-db:
+# (DEPRECATED -- only supported to prevent errors for old configs
+# Default Value: 
+# Scope:         global
+# Effective on:  immediate
+###
+default-tag-db=
+
+#### enable.save-state:
+# Allow the Control Enable application to save state to disk and restore it
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+enable.save-state=no
+
+#### event-file.buffer-size:
+# Maximum number of lines in the event-file buffer
+# Default Value: 2000
+# Scope:         global
+# Effective on:  restart
+###
+event-file.buffer-size=2000
+
+#### event-file.event-level:
+# Event level to log to the event file.
+# Default Value: 9
+# Scope:         global
+# Effective on:  restart
+###
+event-file.event-level=9
+
+#### event-file.keep-days:
+# Number of days worth of event files to keep
+# Default Value: 7
+# Scope:         global
+# Effective on:  restart
+###
+event-file.keep-days=7
+
+#### event-file.split:
+# Determines whether the event-file will be split
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+event-file.split=yes
+
+#### event-file.split-count:
+# Maximum number of split event-files
+# Default Value: 50
+# Scope:         global
+# Effective on:  restart
+###
+event-file.split-count=50
+
+#### event-file.split-size:
+# Size in bytes at which to split the event-file
+# Default Value: 5000000
+# Scope:         global
+# Effective on:  restart
+###
+event-file.split-size=5000000
+
+#### event-file.startup-dump:
+# Dump useful information to the event file on startup
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+event-file.startup-dump=yes
+
+#### event-filename:
+# Filename for the event log (if enabled by use-event-file)
+# Default Value: event.log
+# Scope:         global
+# Effective on:  restart
+###
+event-filename=event.log
+
+#### event-host:
+# Hostname to send events to, if event-mode is set to socket
+# Default Value: localhost
+# Scope:         global
+# Effective on:  restart
+###
+event-host=localhost
+
+#### event-millis:
+# Show milliseconds in event outout displayed as .xxx after time
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+event-millis=no
+
+#### event-mode:
+# Set to server to run an event server, or as socket to deliver events to another host/port
+# Default Value: server
+# Scope:         global
+# Effective on:  restart
+###
+event-mode=server
+
+#### event-port:
+# TCP port number for the event interface
+# Default Value: 20024
+# Scope:         global
+# Effective on:  restart
+###
+event-port=20024
+
+#### event-printer:
+# Name of device to use as event printer (eg. LPT1)
+# Default Value: 
+# Scope:         global
+# Effective on:  restart
+###
+event-printer=
+
+#### event-sink.buffer-size:
+# Maximum number of lines in each event-sink by default
+# Default Value: 500
+# Scope:         global
+# Effective on:  restart
+###
+event-sink.buffer-size=500
+
+#### event.display-oids:
+# Display OIDs in event output if OID is available
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+event.display-oids=yes
+
+#### file.base:
+# Root directory for FILE commands
+# Default Value: .
+# Scope:         global
+# Effective on:  immediate
+###
+file.base=.
+
+#### global-event-level:
+# Global event reporting level (events <= event level will be reported (range 0-9)
+# Default Value: 5
+# Scope:         global
+# Effective on:  immediate
+###
+global-event-level=5
+
+#### heartbeat-time:
+# Number of seconds between heartbeat events
+# Default Value: 0
+# Scope:         global
+# Effective on:  restart
+###
+heartbeat-time=0
+
+#### hide-project-names:
+# Do not show project names in any output from the server
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+hide-project-names=no
+
+#### instance.lock-file:
+# filename for the lock to ensure one instance of C-Gate only
+# Default Value: cgate.lock
+# Scope:         global
+# Effective on:  restart
+###
+instance.lock-file=cgate.lock
+
+#### instance.lock-timeout:
+# stale timeout for instance lock file, in seconds
+# Default Value: 20
+# Scope:         global
+# Effective on:  restart
+###
+instance.lock-timeout=20
+
+#### lighting.auto-phantom-groups:
+# Automatically create phantom groups when lighting commands received from the network
+# Default Value: yes
+# Scope:         network
+# Effective on:  immediate
+###
+lighting.auto-phantom-groups=yes
+
+#### lighting.learn-update:
+# Allow the Lighting Application to perform database updates from Learn mode
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+lighting.learn-update=no
+
+#### load-change-port:
+# TCPIP port to use for load change port
+# Default Value: 20025
+# Scope:         global
+# Effective on:  restart
+###
+load-change-port=20025
+
+#### load-change.buffer-size:
+# Maximum number of lines in the load change event buffer
+# Default Value: 500
+# Scope:         global
+# Effective on:  restart
+###
+load-change.buffer-size=500
+
+#### local-flow-control:
+# Perform flow control in the server rather than the serial port
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+local-flow-control=no
+
+#### macro-path:
+# Path to directory where macro files are stored
+# Default Value: macros
+# Scope:         global
+# Effective on:  immediate
+###
+macro-path=macros
+
+#### memory-report:
+# Write memory reports along with heartbeat
+# Default Value: no
+# Scope:         global
+# Effective on:  closeopen
+###
+memory-report=no
+
+#### network.application-connect:
+# Model application connect and forwarding for bridges
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+network.application-connect=yes
+
+#### network.auto-phantom-bridge:
+# Automatically create phantom bridge units and networks when messages are received
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+network.auto-phantom-bridge=yes
+
+#### network.bridge.mmi-failure-ceiling:
+# Max number of failed MMIs in a row before aborting net check_unravel on a bridged network
+# Default Value: 10
+# Scope:         network
+# Effective on:  immediate
+###
+network.bridge.mmi-failure-ceiling=10
+
+#### network.bridge.mmi-fallback-delay:
+# Delay after failed bridge installation MMI when performing net check_unravel (milliseconds)
+# Default Value: 1000
+# Scope:         network
+# Effective on:  immediate
+###
+network.bridge.mmi-fallback-delay=1000
+
+#### network.error.commands-failed:
+# Number of times commands should fail before the network is deemed to be in error
+# Default Value: 3
+# Scope:         network
+# Effective on:  closeopen
+###
+network.error.commands-failed=3
+
+#### network.error.units-failed:
+# Number of units to fail during sync before the network is deemed to be in error
+# Default Value: 3
+# Scope:         network
+# Effective on:  closeopen
+###
+network.error.units-failed=3
+
+#### network.error.units-failed-hysteresis:
+# Number of units to recover during sync before the network is deemed OK again
+# Default Value: 0
+# Scope:         network
+# Effective on:  closeopen
+###
+network.error.units-failed-hysteresis=0
+
+#### network.pci.poll-interval:
+# Interval to poll gateway to check the connection
+# Default Value: 60
+# Scope:         network
+# Effective on:  closeopen
+###
+network.pci.poll-interval=60
+
+#### network.retries:
+# Number of times commands are retried before the command is deemed to have failed
+# Default Value: 2
+# Scope:         network
+# Effective on:  closeopen
+###
+network.retries=2
+
+#### network.retries.pci-check:
+# PCI Checking begins at this number of retries
+# Default Value: 1
+# Scope:         network
+# Effective on:  closeopen
+###
+network.retries.pci-check=1
+
+#### network.source:
+# The default source of networks definitions.  Valid values are db or file
+# Default Value: db
+# Scope:         project
+# Effective on:  restart
+###
+network.source=db
+
+#### network.state-interval:
+# Interval (seconds) between network status events being sent for all networks
+# Default Value: 0
+# Scope:         global
+# Effective on:  restart
+###
+network.state-interval=0
+
+#### networks-file:
+# The base name of the networks file, which will be prefixedby the project name to make the network filename 
+# Default Value: networks.txt
+# Scope:         global
+# Effective on:  restart
+###
+networks-file=networks.txt
+
+#### patchset.file:
+# name of the file containing patch sets
+# Default Value: patchset.zip
+# Scope:         global
+# Effective on:  restart
+###
+patchset.file=patchset.zip
+
+#### pci-flow-control:
+# Enable XON/XOFF flow control by the PCI
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+pci-flow-control=yes
+
+#### pci.local-sal:
+# Send Application-Connect compatible messages via this PCI
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+pci.local-sal=yes
+
+#### pp.spec-base-directory:
+# Base directory for unit specifications
+# Default Value: unitspec/
+# Scope:         global
+# Effective on:  restart
+###
+pp.spec-base-directory=unitspec/
+
+#### project.default:
+# Name of the default project
+# Default Value: 
+# Scope:         global
+# Effective on:  restart
+###
+project.default=
+
+#### project.default.archive-dir:
+# Directory where archived projects are stored
+# Default Value: tag/archived
+# Scope:         global
+# Effective on:  restart
+###
+project.default.archive-dir=tag/archived
+
+#### project.default.dir:
+# Default directory holding project files
+# Default Value: tag/
+# Scope:         global
+# Effective on:  restart
+###
+project.default.dir=tag/
+
+#### project.start:
+# Space-separated list of projects to start on server startup
+# Default Value: 
+# Scope:         global
+# Effective on:  restart
+###
+project.start=
+
+#### reopen-delay:
+# Delay time in milliseconds between attempted re-opens of a network
+# Default Value: 15000
+# Scope:         network
+# Effective on:  closeopen
+###
+reopen-delay=15000
+
+#### report-new-objects:
+# Sends events indicating when new units are located on the network
+# Default Value: no
+# Scope:         network
+# Effective on:  closeopen
+###
+report-new-objects=no
+
+#### response-delay:
+# Time in milliseconds to wait for a response before errors or resending
+# Default Value: 5500
+# Scope:         network
+# Effective on:  closeopen
+###
+response-delay=5500
+
+#### scene-base:
+# Path to scene files (relative to server base directory)
+# Default Value: scene
+# Scope:         global
+# Effective on:  restart
+###
+scene-base=scene
+
+#### secure.bind-address:
+# hostname or ip address of local interfaces to bind secure interfaces to
+# Default Value: 
+# Scope:         global
+# Effective on:  restart
+###
+secure.bind-address=
+
+#### secure.port-base:
+# Base port number for SSL secured ports
+# Default Value: 20123
+# Scope:         global
+# Effective on:  restart
+###
+secure.port-base=20123
+
+#### serial.fixbaud:
+# Serial network connection will attempt to fix buad rate if no response
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+serial.fixbaud=yes
+
+#### speed-write:
+# Enable fast writing of on/off/ramp commands with instant returns
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+speed-write=yes
+
+#### startup-delay:
+# (DEPRECATED) Delay (in seconds) before opening a network
+# Default Value: 0
+# Scope:         network
+# Effective on:  closeopen
+###
+startup-delay=0
+
+#### sweep-timeout:
+# Time in milliseconds between executions of the queue sweeper
+# Default Value: 2000
+# Scope:         network
+# Effective on:  closeopen
+###
+sweep-timeout=2000
+
+#### sync-fast-pci:
+# Operate PCI in a synchronous mode (wait for response before sending)
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+sync-fast-pci=yes
+
+#### sync-time:
+# Time in seconds between the beginnings of successive sync operations
+# Default Value: 3600
+# Scope:         network
+# Effective on:  closeopen
+###
+sync-time=3600
+
+#### sync.gateway-pool-size:
+# Maximum number of concurrent background syncs per local gateway
+# Default Value: 3
+# Scope:         global
+# Effective on:  restart
+###
+sync.gateway-pool-size=3
+
+#### sync.global-pool-size:
+# Maximum number of concurrent background syncs
+# Default Value: 25
+# Scope:         global
+# Effective on:  restart
+###
+sync.global-pool-size=25
+
+#### sync.padding.enabled:
+# Whether sync padding is enabled.
+# Default Value: yes
+# Scope:         project
+# Effective on:  closeopen
+###
+sync.padding.enabled=yes
+
+#### sync.padding.maximum:
+# The maximum padding distance between networks, in seconds.
+# Default Value: 300
+# Scope:         project
+# Effective on:  closeopen
+###
+sync.padding.maximum=300
+
+#### sync.padding.minimum:
+# The minimum padding distance between networks, in seconds.
+# Default Value: 5
+# Scope:         project
+# Effective on:  closeopen
+###
+sync.padding.minimum=5
+
+#### sync.padding.sync-time-factor:
+# A factor (0.1 to 1.0) applied to the project's sync-time to determine the overall padding period.
+# Default Value: 0.75
+# Scope:         project
+# Effective on:  closeopen
+###
+sync.padding.sync-time-factor=0.75
+
+#### sync.sync-free.periods:
+# Periods during which to avoid performing background syncs.
+# Default Value: 
+# Scope:         network
+# Effective on:  closeopen
+###
+sync.sync-free.periods=
+
+#### tag-autosave:
+# If project (tag) database is updated by learn mode, then automatically save the database to disk
+# Default Value: no
+# Scope:         global
+# Effective on:  immediate
+###
+tag-autosave=no
+
+#### tag-name-output:
+# Show tag names in any output from the server
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+tag-name-output=no
+
+#### tag-use-zip:
+# Store tag databases as zip files
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+tag-use-zip=no
+
+#### tag-validate-db:
+# Perform XML validation on tag databases
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+tag-validate-db=yes
+
+#### tagname-prefix:
+# Require prefix before tag names in address paths
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+tagname-prefix=yes
+
+#### transform.base:
+# base directory for xslt transforms
+# Default Value: transform/
+# Scope:         global
+# Effective on:  restart
+###
+transform.base=transform/
+
+#### unit-auto-delete:
+# Units are automatically deleted from the server if they are not found on the network
+# Default Value: no
+# Scope:         network
+# Effective on:  immediate
+###
+unit-auto-delete=no
+
+#### unit-auto-update-db:
+# Units parameters are automatically updated to the project database
+# Default Value: no
+# Scope:         network
+# Effective on:  immediate
+###
+unit-auto-update-db=no
+
+#### unitcatalog.directory:
+# Directory where the unit catalog is stored (relative to server home directory)
+# Default Value: unitspec
+# Scope:         global
+# Effective on:  restart
+###
+unitcatalog.directory=unitspec
+
+#### unitcatalog.filename:
+# Name of the unit catalog file
+# Default Value: cbusunits.xml
+# Scope:         global
+# Effective on:  restart
+###
+unitcatalog.filename=cbusunits.xml
+
+#### unravel.readdress-bridge:
+# During an unravel, automatically readdress the bridge to match the near side network
+# Default Value: yes
+# Scope:         network
+# Effective on:  immediate
+###
+unravel.readdress-bridge=yes
+
+#### use-1.0-addressing:
+# Use C-Gate 1.0-style addresses in any output from the server
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+use-1.0-addressing=no
+
+#### use-cgroups:
+# Use C-Groups
+# Default Value: no
+# Scope:         project
+# Effective on:  closeopen
+###
+use-cgroups=no
+
+#### use-config-change-port:
+# Enable the config change port operation
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+use-config-change-port=yes
+
+#### use-event-file:
+# Save events to a file (filename specified in event-filename)
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+use-event-file=yes
+
+#### use-load-change-port:
+# Start the load change port
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+use-load-change-port=yes
+
+#### use-queue-sweeper:
+# Run the queue sweeper to remove stale commands
+# Default Value: yes
+# Scope:         network
+# Effective on:  closeopen
+###
+use-queue-sweeper=yes
+
+#### use-scenes:
+# Enable CGate server scenes
+# Default Value: no
+# Scope:         global
+# Effective on:  restart
+###
+use-scenes=no
+
+#### use-tags:
+# Use tag databases
+# Default Value: yes
+# Scope:         global
+# Effective on:  restart
+###
+use-tags=yes
+## End of configuration file
