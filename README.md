@@ -60,7 +60,8 @@ services:
 | --- | ----------- |
 | latest | Releases from the latest stable branch |
 | 2.11 | Releases from the 2.11.x branch |
-        
+
+
 
 ### Parameters
 
