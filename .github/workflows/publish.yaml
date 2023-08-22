@@ -40,6 +40,7 @@ jobs:
           cosign-release: 'v2.1.1'
 
       - name: Check install!
+        if: github.event_name != 'pull_request'
         run: cosign version
 
       - name: Set up QEMU
@@ -104,6 +105,7 @@ jobs:
             
       # # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
       # - name: Sign image with a key
+      #   if: github.event_name != 'pull_request'
       #   run: |
       #     cosign sign --yes --key env://COSIGN_PRIVATE_KEY "${TAGS}@${DIGEST}"
       #   env:
@@ -113,6 +115,7 @@ jobs:
       #     DIGEST: ${{ steps.build-and-push.outputs.digest }}
 
       # - name: Sign the images with GitHub OIDC Token
+      #   if: github.event_name != 'pull_request'
       #   env:
       #     DIGEST: ${{ steps.build-and-push.outputs.digest }}
       #     TAGS: ${{ steps.docker_meta.outputs.tags }}
