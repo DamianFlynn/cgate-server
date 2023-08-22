@@ -1,12 +1,26 @@
-# CGate Server
+# Clipsal C-Gate Server Docker Container
 
-This docker image installs the Clipsal CGate Server for use with CBus appliances.
+The Clipsal C-Gate Server is a powerful utility designed to interface with the Clipsal PLC system, connecting via either serial or network connections. This repository provides a Dockerized version of the C-Gate Server, enabling convenient deployment and management of the server within a containerized environment. The C-Gate Server acts as a bridge between the Clipsal PLC system and other devices, facilitating seamless communication.
 
-## Install
+## Purpose
 
-Here are some example snippets to help you get started creating a container.
+The primary purpose of this project is to encapsulate the Clipsal C-Gate Server within a Docker container, allowing users to deploy the server effortlessly on various platforms. By leveraging Docker's isolation and management capabilities, this solution simplifies the installation and usage of the C-Gate Server, making it an ideal choice for users looking to connect and interact with the Clipsal PLC system.
 
-### Docker
+## Features
+
+- **Flexible Connectivity:** The C-Gate Server offers support for both serial and network connections, providing a versatile interface to the Clipsal PLC system.
+- **Dockerized Deployment:** The provided Dockerfile enables the creation of a containerized instance of the C-Gate Server, making setup and configuration straightforward.
+- **Customizable Configuration:** The container supports customization through configuration files, allowing users to tailor the server's behavior to their specific needs.
+
+## Usage
+
+To utilize the Dockerized `cgate-server` container, follow these steps:
+
+1. **Build the Docker Image:**
+
+   ```bash
+   docker build -t cgate-server .
+   ```
 
 The container supports the following parameters
 
@@ -21,7 +35,10 @@ The container supports the following parameters
 | `-v :/tag` | CGate tag directory (XML project files go here) |
 | `-v :/logs` | CGate logs directory |
 
-Example usage
+
+### Docker 
+
+Start the container directly with the following example
 
 ```
 docker create \
@@ -38,11 +55,11 @@ docker create \
   steppinghat/cgate-server
 ```
 
-### docker-compose
+### Docker Compose:**
 
-Compatible with docker-compose v3 schemas
+Create a Docker Compose file (`docker-compose.yml`):
 
-```
+ ```yaml
 version: '3.8'
 
 x-disabled:
@@ -52,7 +69,7 @@ services:
   # CNI Serial port (RS232 to USB) to TCP 10001
   ser2sock:
     hostname: "ser2sock"
-    image: ser2sock:latest
+    image: ghcr.io/damianflynn/ser2sock:latest
     container_name: ser2sock
     restart: unless-stopped
     networks:
@@ -70,7 +87,7 @@ services:
   # Clipsal C-Bus C-Gate Server
   cgate-server:
     hostname: "cgate-server"
-    image: cgate-server:latest
+    image: ghcr.io/damianflynn/cgate-server:latest
     container_name: cgate-server
     depends_on:
       - ser2sock
@@ -95,16 +112,21 @@ networks:
     external: true
 ```
 
-### Version tags
+   Run the Docker Compose:
 
-| Tag | Description |
-| --- | ----------- |
-| latest | Releases from the latest stable branch |
-| 2.11 | Releases from the 2.11.x branch |
-        
+   ```bash
+   docker-compose up -d
+   ```
 
+## Accessing the C-Gate Server:**
 
-## Usage
+Once the container is running, you can access the Clipsal C-Gate Server via the defined ports (e.g., 20023, 20024, etc.). The server will act as an intermediary, managing communication between the Clipsal PLC system and external devices.
+
+## Configuration and Persistence
+
+The C-Gate Server configuration and associated data are persisted using Docker volumes. Customize your server's behavior by modifying the configuration files found in the `/opt/appdata/cbus/config` volume on your host.
+
+#### Toolkit Project
 
 Easy installation can be achieved if you already have the XML version of the C-Bus Toolkit project file.
 Place this file in the `/tag` directory; In my example the location on storage is `/opt/appdata/cbus/tags`
@@ -115,7 +137,7 @@ Place this file in the `/tag` directory; In my example the location on storage i
 ```
 
 
-### C-Gate Access Control file
+#### C-Gate Access Control file
 
 Access to the server is governed by a file named `access.txt`
 If this file does not already exist, create it in your mapped`/config` folder, as you defined in your docker configuration. 
@@ -146,3 +168,11 @@ remote 172.16.100.10 Program
 ```
 
 In my example the final line is my windows machine which runs C-Bus toolkit when i need to work on the system
+
+## Troubleshooting
+
+If you encounter any issues, ensure that your configuration settings and Docker Compose file match your specific hardware setup and requirements.
+
+## Conclusion
+
+By containerizing the Clipsal C-Gate Server using Docker, this project empowers users to effortlessly deploy, manage, and utilize the server for seamless communication with the Clipsal PLC system. This containerized approach enhances flexibility and simplifies deployment, enabling users to connect to the Clipsal system with ease and efficiency.
