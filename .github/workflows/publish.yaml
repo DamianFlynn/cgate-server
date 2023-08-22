@@ -77,9 +77,8 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v4.4.0
         with:
-          images: ghcr.io/sigstore/sample-honk
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: type=sha,format=long
-          # images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
        
       - name: downcase REPO
         run: |
